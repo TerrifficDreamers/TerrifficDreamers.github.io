@@ -15,6 +15,8 @@ if (!cs?.enabled) return null;
 </script>
 
 <style is:global>
+  /* Gate nur sichtbar wenn gelockt — !important wegen Scoped-CSS-Spezifität */
+  html:not(.is-locked) .coming-soon { display: none !important; }
   html.is-locked body > *:not(.coming-soon) { display: none !important; }
   html.is-locked, html.is-locked body { overflow: hidden; }
 </style>
