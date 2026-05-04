@@ -13,16 +13,16 @@ const fmtDate = (d) => {
   <header class="page-header">
     <div class="container container--narrow">
       <span class="eyebrow">Klubgeschichte</span>
-      <h1>Our Story</h1>
+      <h1 data-letters>Our Story</h1>
       <p class="muted">{story.intro}</p>
     </div>
   </header>
 
   <section>
     <div class="container container--narrow">
-      <ol class="timeline">
+      <ol class="timeline" data-reveal-stagger>
         {story.events.map((e) => (
-          <li class="timeline__item" data-reveal>
+          <li class="timeline__item" data-reveal="fade-left">
             <div class="timeline__date">{fmtDate(e.date)}</div>
             <h3 class="timeline__title">{e.title}</h3>
             <p class="muted" style="margin:0;">{e.text}</p>

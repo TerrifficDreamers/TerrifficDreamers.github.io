@@ -18,39 +18,40 @@ import story from '../config/story.json';
     <div class="hero__overlay"></div>
     <div class="hero__content">
       <img class="hero__logo" src="/media/logo/club-logo.png" alt={`Logo ${site.name}`} width="200" height="200" />
-      <h1 class="hero__title">{site.name}</h1>
+      <h1 class="hero__title" data-letters>{site.name}</h1>
       <p class="hero__tagline">„{site.tagline}"</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="/our-story">Wie alles begann</a>
         <a class="btn btn--ghost" href="/bewerbung">Bewerben</a>
       </div>
     </div>
+    <span class="hero__scroll-hint" aria-hidden="true"></span>
   </section>
 
   <section>
     <div class="container container--narrow" style="text-align:center;">
-      <span class="eyebrow" data-reveal>Willkommen</span>
-      <h2 data-reveal>{`Schön, dass du hier bist`}</h2>
-      <p class="muted" data-reveal>{story.intro}</p>
+      <span class="eyebrow" data-reveal="fade-up">Willkommen</span>
+      <h2 data-reveal="fade-up">{`Schön, dass du hier bist`}</h2>
+      <p class="muted" data-reveal="fade-up">{story.intro}</p>
     </div>
   </section>
 
   <section style="background: var(--color-surface);">
     <div class="container">
-      <div class="grid">
-        <a href="/our-story" class="card card--link" data-reveal>
+      <div class="grid" data-reveal-stagger>
+        <a href="/our-story" class="card card--link" data-reveal="fade-up">
           <h3 class="card__title">Our Story</h3>
           <p class="muted">Wie aus einer Schnapsidee ein Club wurde.</p>
         </a>
-        <a href="/about/rangsystem" class="card card--link" data-reveal>
+        <a href="/about/rangsystem" class="card card--link" data-reveal="fade-up">
           <h3 class="card__title">Rangsystem</h3>
           <p class="muted">Acht Stufen, vom Cavalier bis zur Crown.</p>
         </a>
-        <a href="/about/wochenplan" class="card card--link" data-reveal>
+        <a href="/about/wochenplan" class="card card--link" data-reveal="fade-up">
           <h3 class="card__title">Wochenplan</h3>
           <p class="muted">Wann wir uns treffen — und wo.</p>
         </a>
-        <a href="/bewerbung" class="card card--link" data-reveal>
+        <a href="/bewerbung" class="card card--link" data-reveal="fade-up">
           <h3 class="card__title">Bewerbung</h3>
           <p class="muted">Werde Teil der Terrific Dreamers.</p>
         </a>

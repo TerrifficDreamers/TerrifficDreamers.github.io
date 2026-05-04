@@ -12,16 +12,16 @@ const pages = [
   <header class="page-header">
     <div class="container container--narrow">
       <span class="eyebrow">Über uns</span>
-      <h1>About us</h1>
+      <h1 data-letters>About us</h1>
       <p class="muted">Alles, was du über die Terrific Dreamers wissen solltest.</p>
     </div>
   </header>
 
   <section>
     <div class="container">
-      <div class="grid">
+      <div class="grid" data-reveal-stagger>
         {pages.map((p) => (
-          <a class="card card--link" href={p.href} data-reveal>
+          <a class="card card--link" href={p.href} data-reveal="fade-up">
             <h3 class="card__title">{p.title}</h3>
             <p class="muted">{p.desc}</p>
           </a>

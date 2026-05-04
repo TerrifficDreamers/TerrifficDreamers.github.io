@@ -20,7 +20,7 @@ const steps = [
   <header class="page-header">
     <div class="container container--narrow">
       <span class="eyebrow">Mitglied werden</span>
-      <h1>Bewerbungsverfahren</h1>
+      <h1 data-letters>Bewerbungsverfahren</h1>
       <p class="muted">Lust, Teil der Terrific Dreamers zu werden? So läuft's.</p>
     </div>
   </header>
@@ -28,9 +28,9 @@ const steps = [
   <section>
     <div class="container container--narrow">
       <h2 data-reveal>Voraussetzungen</h2>
-      <ul style="list-style:none; padding:0;">
+      <ul style="list-style:none; padding:0;" data-reveal-stagger>
         {requirements.map((r) => (
-          <li class="card" style="padding: var(--sp-3) var(--sp-5); margin-bottom: var(--sp-3);" data-reveal>
+          <li class="card" style="padding: var(--sp-3) var(--sp-5); margin-bottom: var(--sp-3);" data-reveal="fade-left">
             <span style="color: var(--color-brass); margin-right: var(--sp-3);">✓</span>{r}
           </li>
         ))}
@@ -41,9 +41,9 @@ const steps = [
   <section style="background: var(--color-surface);">
     <div class="container container--narrow">
       <h2 data-reveal>Ablauf</h2>
-      <ol style="list-style:none; padding:0; counter-reset: step;">
+      <ol style="list-style:none; padding:0; counter-reset: step;" data-reveal-stagger>
         {steps.map((s) => (
-          <li class="card" style="margin-bottom: var(--sp-4); display:grid; grid-template-columns:48px 1fr; gap:var(--sp-4); align-items:start;" data-reveal>
+          <li class="card" style="margin-bottom: var(--sp-4); display:grid; grid-template-columns:48px 1fr; gap:var(--sp-4); align-items:start;" data-reveal="fade-up">
             <div class="rank__num" aria-hidden="true">{s.n}</div>
             <div>
               <h3 style="margin: 0 0 var(--sp-1); font-size: 1.2rem;">{s.title}</h3>

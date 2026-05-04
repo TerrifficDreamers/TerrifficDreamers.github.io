@@ -6,16 +6,16 @@ import schedule from '../../config/schedule.json';
   <header class="page-header">
     <div class="container container--narrow">
       <span class="eyebrow">About</span>
-      <h1>Wochenplan</h1>
+      <h1 data-letters>Wochenplan</h1>
       <p class="muted">Unsere regelmäßigen Treffen.</p>
     </div>
   </header>
 
   <section>
     <div class="container container--narrow">
-      <div style="display:grid; gap: var(--sp-4);">
+      <div style="display:grid; gap: var(--sp-4);" data-reveal-stagger>
         {schedule.regular.map((s) => (
-          <div class="schedule-card" data-reveal>
+          <div class="schedule-card" data-reveal="fade-left">
             <div>
               <div class="schedule-card__day">{s.day}</div>
               <div class="schedule-card__time">{s.time} Uhr</div>

@@ -7,7 +7,7 @@ import members from '../../config/members.json';
   <header class="page-header">
     <div class="container container--narrow">
       <span class="eyebrow">Management</span>
-      <h1>Reitlehrer</h1>
+      <h1 data-letters>Reitlehrer</h1>
       <p class="muted">Unser Trainer-Team. Verantwortlich für Trainings, Prüfungen und Competition-Vorbereitung.</p>
     </div>
   </header>
@@ -17,7 +17,7 @@ import members from '../../config/members.json';
       {members.reitlehrer.length === 0 ? (
         <p class="muted" style="text-align:center;">Noch keine Einträge.</p>
       ) : (
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));" data-reveal-stagger>
           {members.reitlehrer.map((m) => <MemberCard member={m} />)}
         </div>
       )}

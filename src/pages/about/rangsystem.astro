@@ -6,16 +6,16 @@ import ranks from '../../config/ranks.json';
   <header class="page-header">
     <div class="container container--narrow">
       <span class="eyebrow">About</span>
-      <h1>Rangsystem</h1>
+      <h1 data-letters>Rangsystem</h1>
       <p class="muted">Acht Stufen, klare Aufgaben. Von unten nach oben.</p>
     </div>
   </header>
 
   <section>
     <div class="container container--narrow">
-      <div style="display:grid; gap: var(--sp-4);">
+      <div style="display:grid; gap: var(--sp-4);" data-reveal-stagger>
         {ranks.ranks.map((r) => (
-          <div class="rank" data-reveal>
+          <div class="rank" data-reveal="fade-left">
             <div class="rank__num">{r.order}</div>
             <div>
               <h3 class="rank__name">{r.name}</h3>

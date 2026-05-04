@@ -13,6 +13,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import ComingSoonGate from '../components/ComingSoonGate.astro';
 import site from '../config/site.json';
+import { ViewTransitions } from 'astro:transitions';
 
 const { title, description = site.tagline, noindex = false } = Astro.props;
 const fullTitle = title ? `${title} — ${site.name}` : `${site.name} — ${site.tagline}`;
@@ -35,6 +36,7 @@ const fullTitle = title ? `${title} — ${site.name}` : `${site.name} — ${site
 
   <link rel="icon" type="image/png" href="/media/logo/club-logo.png" />
   {Astro.site && <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />}
+  <ViewTransitions />
 </head>
 <body>
   <ComingSoonGate />
@@ -48,6 +50,7 @@ const fullTitle = title ? `${title} — ${site.name}` : `${site.name} — ${site
   <script>
     import '../scripts/mobileNav.js';
     import '../scripts/reveal.js';
+    import '../scripts/navScroll.js';
   </script>
 </body>
 </html>

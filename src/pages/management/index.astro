@@ -5,7 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <header class="page-header">
     <div class="container container--narrow">
       <span class="eyebrow">Leitung</span>
-      <h1>Our Management</h1>
+      <h1 data-letters>Our Management</h1>
       <p class="muted">
         Die Clubleitung der Terrific Dreamers besteht aus dem Clubmanagement und den Reitlehrern.
         Alle Mitglieder dieser beiden Gruppen übernehmen wichtige Aufgaben der Leitung.
@@ -15,12 +15,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   <section>
     <div class="container">
-      <div class="grid">
-        <a class="card card--link" href="/management/clubmanagement" data-reveal>
+      <div class="grid" data-reveal-stagger>
+        <a class="card card--link" href="/management/clubmanagement" data-reveal="fade-up">
           <h3 class="card__title">Clubmanagement</h3>
           <p class="muted">Die Personen, die den Club organisieren und führen.</p>
         </a>
-        <a class="card card--link" href="/management/reitlehrer" data-reveal>
+        <a class="card card--link" href="/management/reitlehrer" data-reveal="fade-up">
           <h3 class="card__title">Reitlehrer</h3>
           <p class="muted">Unser Trainer-Team für Prüfungen und Competitions.</p>
         </a>
