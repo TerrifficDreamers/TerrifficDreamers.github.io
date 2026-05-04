@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MemberCard from '../../components/MemberCard.astro';
+import members from '../../config/members.json';
+---
+<BaseLayout title="Reitlehrer">
+  <header class="page-header">
+    <div class="container container--narrow">
+      <span class="eyebrow">Management</span>
+      <h1>Reitlehrer</h1>
+      <p class="muted">Unser Trainer-Team. Verantwortlich für Trainings, Prüfungen und Competition-Vorbereitung.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      {members.reitlehrer.length === 0 ? (
+        <p class="muted" style="text-align:center;">Noch keine Einträge.</p>
+      ) : (
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+          {members.reitlehrer.map((m) => <MemberCard member={m} />)}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

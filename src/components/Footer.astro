@@ -1,0 +1,38 @@
+---
+import site from '../config/site.json';
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__title">{site.name}</div>
+        <p class="muted" style="font-size:0.9rem;">{site.tagline}</p>
+        <p class="muted" style="font-size:0.85rem;">{site.server}</p>
+      </div>
+      <div>
+        <div class="footer__title">Navigation</div>
+        <ul class="footer__list">
+          <li><a href="/">Willkommen</a></li>
+          <li><a href="/our-story">Our Story</a></li>
+          <li><a href="/management">Management</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/bewerbung">Bewerbung</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__title">Rechtliches</div>
+        <ul class="footer__list">
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© {year} {site.name}</span>
+      <span>
+        Erstellt von <a href={site.creator.url} target="_blank" rel="noopener noreferrer">{site.creator.name}</a>
+      </span>
+    </div>
+  </div>
+</footer>

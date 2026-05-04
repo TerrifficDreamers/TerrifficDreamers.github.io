@@ -1,0 +1,22 @@
+{
+  "clubmanagement": [
+    {
+      "name": "Michelle Purplefrog",
+      "role": "Gründerin & Clubleitung",
+      "rank": "The Crown",
+      "since": "2022-01",
+      "image": "/media/members/placeholder.png",
+      "discord": ""
+    }
+  ],
+  "reitlehrer": [
+    {
+      "name": "__NAME__",
+      "role": "Reitlehrer",
+      "rank": "Gouvernant",
+      "since": "____-__",
+      "image": "/media/members/placeholder.png",
+      "discord": ""
+    }
+  ]
+}

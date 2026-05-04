@@ -1,0 +1,40 @@
+{
+  "palette": ["#0E0B0C", "#7B1F2B", "#B08D57", "#EDE6DC"],
+  "categories": [
+    {
+      "name": "Kopf",
+      "items": [
+        { "slug": "daisy-adders-hut", "name": "Daisy Adders Hut", "priceJ": null, "priceSC": null, "image": "/media/outfit/daisy-adders-hut.jpg" }
+      ]
+    },
+    {
+      "name": "Oberteil",
+      "items": [
+        { "slug": "rollkragenpullover", "name": "Schwarzer Rollkragenpullover „Skandinavisches Feingefühl\"", "priceJ": null, "priceSC": null, "image": "/media/outfit/rollkragenpullover.jpg" }
+      ]
+    },
+    {
+      "name": "Hose",
+      "items": [
+        { "slug": "sturm-hose", "name": "Weinrote Sturm-Hose", "priceJ": null, "priceSC": null, "image": "/media/outfit/sturm-hose.jpg" }
+      ]
+    },
+    {
+      "name": "Accessoires",
+      "items": [
+        { "slug": "stulpen", "name": "Schwarze Stulpen", "priceJ": null, "priceSC": null, "image": "/media/outfit/stulpen.jpg" },
+        { "slug": "stiefel", "name": "Schwarze Stiefel", "priceJ": null, "priceSC": null, "image": "/media/outfit/stiefel.jpg" }
+      ]
+    },
+    {
+      "name": "Reitausrüstung",
+      "items": [
+        { "slug": "satteldecke", "name": "Rote Druidensatteldecke", "priceJ": null, "priceSC": null, "image": "/media/outfit/satteldecke.jpg" },
+        { "slug": "sattel", "name": "Exklusiver Reitsattel", "priceJ": null, "priceSC": null, "image": "/media/outfit/sattel.jpg" },
+        { "slug": "zaumzeug", "name": "Barockes Zaumzeug (Schwarz/Messing)", "priceJ": null, "priceSC": null, "image": "/media/outfit/zaumzeug.jpg" },
+        { "slug": "schweiffeder", "name": "„Canter Ella\" Schweiffeder", "priceJ": null, "priceSC": null, "image": "/media/outfit/schweiffeder.jpg" },
+        { "slug": "wickelgamaschen", "name": "Wickelgamaschen", "priceJ": null, "priceSC": null, "image": "/media/outfit/wickelgamaschen.jpg" }
+      ]
+    }
+  ]
+}

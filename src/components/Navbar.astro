@@ -1,0 +1,47 @@
+---
+import site from '../config/site.json';
+const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const isCurrent = (href) => path === href.replace(/\/+$/, '') || (href !== '/' && path.startsWith(href.replace(/\/+$/, '')));
+---
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__brand" aria-label="Startseite">
+      <img src="/media/logo/club-logo.png" alt="" width="36" height="36" />
+      <span>{site.name}</span>
+    </a>
+
+    <button class="navbar__burger" data-nav-burger aria-label="Menü öffnen" aria-expanded="false" aria-controls="primary-nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </button>
+
+    <nav id="primary-nav">
+      <ul class="navbar__menu" data-nav-menu>
+        <li><a href="/" aria-current={isCurrent('/') && path === '/' ? 'page' : undefined}>Willkommen</a></li>
+        <li><a href="/our-story" aria-current={isCurrent('/our-story') ? 'page' : undefined}>Our Story</a></li>
+        <li class="navbar__has-sub">
+          <a href="/management" data-sub-toggle aria-current={isCurrent('/management') ? 'page' : undefined}>Management ▾</a>
+          <ul class="navbar__sub">
+            <li><a href="/management">Übersicht</a></li>
+            <li><a href="/management/clubmanagement">Clubmanagement</a></li>
+            <li><a href="/management/reitlehrer">Reitlehrer</a></li>
+          </ul>
+        </li>
+        <li class="navbar__has-sub">
+          <a href="/about" data-sub-toggle aria-current={isCurrent('/about') ? 'page' : undefined}>About ▾</a>
+          <ul class="navbar__sub">
+            <li><a href="/about">Übersicht</a></li>
+            <li><a href="/about/stammplatz">Stammplatz</a></li>
+            <li><a href="/about/cluboutfit">Cluboutfit</a></li>
+            <li><a href="/about/rangsystem">Rangsystem</a></li>
+            <li><a href="/about/wochenplan">Wochenplan</a></li>
+          </ul>
+        </li>
+        <li><a href="/bewerbung" aria-current={isCurrent('/bewerbung') ? 'page' : undefined}>Bewerbung</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

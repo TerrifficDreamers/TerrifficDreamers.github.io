@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../config/site.json';
+import story from '../config/story.json';
+---
+<BaseLayout title="" description={site.tagline}>
+  <section class="hero" aria-label="Willkommen">
+    <div class="hero__bg">
+      <!-- Desktop: Video. Mobile: Posterbild (Video wird per CSS verborgen, lädt aber dank media-Hint-Strategie nicht voll). -->
+      <video
+        class="hero__video"
+        autoplay muted loop playsinline preload="metadata"
+        poster="/media/hero/poster.jpg"
+        aria-hidden="true">
+        <source src="/media/hero/background.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <img class="hero__logo" src="/media/logo/club-logo.png" alt={`Logo ${site.name}`} width="200" height="200" />
+      <h1 class="hero__title">{site.name}</h1>
+      <p class="hero__tagline">„{site.tagline}"</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="/our-story">Wie alles begann</a>
+        <a class="btn btn--ghost" href="/bewerbung">Bewerben</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container container--narrow" style="text-align:center;">
+      <span class="eyebrow" data-reveal>Willkommen</span>
+      <h2 data-reveal>{`Schön, dass du hier bist`}</h2>
+      <p class="muted" data-reveal>{story.intro}</p>
+    </div>
+  </section>
+
+  <section style="background: var(--color-surface);">
+    <div class="container">
+      <div class="grid">
+        <a href="/our-story" class="card card--link" data-reveal>
+          <h3 class="card__title">Our Story</h3>
+          <p class="muted">Wie aus einer Schnapsidee ein Club wurde.</p>
+        </a>
+        <a href="/about/rangsystem" class="card card--link" data-reveal>
+          <h3 class="card__title">Rangsystem</h3>
+          <p class="muted">Acht Stufen, vom Cavalier bis zur Crown.</p>
+        </a>
+        <a href="/about/wochenplan" class="card card--link" data-reveal>
+          <h3 class="card__title">Wochenplan</h3>
+          <p class="muted">Wann wir uns treffen — und wo.</p>
+        </a>
+        <a href="/bewerbung" class="card card--link" data-reveal>
+          <h3 class="card__title">Bewerbung</h3>
+          <p class="muted">Werde Teil der Terrific Dreamers.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Mobile: Video aus, Poster als Hintergrundbild via Pseudo-Layer */
+  @media (max-width: 768px) {
+    .hero__video { display: none; }
+    .hero__bg::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: url('/media/hero/poster.jpg') center/cover no-repeat;
+      animation: kenburns 22s ease-in-out infinite alternate;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero__bg::before { animation: none; }
+    }
+  }
+</style>

@@ -1,0 +1,37 @@
+{
+  "intro": "Herzlich willkommen auf der Homepage der Terrific Dreamers. Begleite uns auf eine kleine Reise durch unsere Vergangenheit.",
+  "quote": "Der Club erlaubte mir als Person zu wachsen und zu lernen. Heute kann ich mit Stolz sagen, dass die Schnapsidee „Terrific Dreamers\" der beste Zufall meines Lebens war.",
+  "events": [
+    {
+      "date": "2021-12",
+      "title": "Die Idee entsteht",
+      "text": "Anfang Dezember 2021 wird die Idee zu den Terrific Dreamers geboren."
+    },
+    {
+      "date": "2022-01-23",
+      "title": "Offizielle Eröffnung",
+      "text": "Am 23. Januar 2022 öffnet der Club offiziell seine Tore."
+    },
+    {
+      "date": "2023",
+      "title": "Wir wachsen",
+      "text": "Erste größere Competitions, neue Strukturen, das Rangsystem nimmt Form an."
+    },
+    {
+      "date": "2024",
+      "title": "Etabliert",
+      "text": "Stabile Mitgliederbasis, regelmäßige Treffen, eingespieltes Team."
+    },
+    {
+      "date": "2025",
+      "title": "Heute",
+      "text": "Klare Rituale, eigener Stil, großes Herz."
+    }
+  ],
+  "gallery": {
+    "2022": [],
+    "2023": [],
+    "2024": [],
+    "2025": []
+  }
+}

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import story from '../config/story.json';
+
+const fmtDate = (d) => {
+  const [y, m] = d.split('-');
+  if (!m) return y;
+  const months = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+  return `${months[parseInt(m,10)-1]} ${y}`;
+};
+---
+<BaseLayout title="Our Story" description="Die Geschichte der Terrific Dreamers.">
+  <header class="page-header">
+    <div class="container container--narrow">
+      <span class="eyebrow">Klubgeschichte</span>
+      <h1>Our Story</h1>
+      <p class="muted">{story.intro}</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container container--narrow">
+      <ol class="timeline">
+        {story.events.map((e) => (
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__date">{fmtDate(e.date)}</div>
+            <h3 class="timeline__title">{e.title}</h3>
+            <p class="muted" style="margin:0;">{e.text}</p>
+          </li>
+        ))}
+      </ol>
+
+      <blockquote class="quote" data-reveal>{story.quote}</blockquote>
+    </div>
+  </section>
+</BaseLayout>

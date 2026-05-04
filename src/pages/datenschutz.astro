@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import legal from '../config/legal.json';
+import site from '../config/site.json';
+const o = legal.owner;
+const h = legal.hosting;
+---
+<BaseLayout title="Datenschutzerklärung">
+  <header class="page-header">
+    <div class="container container--narrow">
+      <span class="eyebrow">Rechtliches</span>
+      <h1>Datenschutzerklärung</h1>
+      <p class="muted">Stand: {new Date().toISOString().slice(0,10)}</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container container--narrow">
+
+      <h2>1. Verantwortlicher</h2>
+      <p>
+        {o.name}<br />
+        {o.street}, {o.zip} {o.city}, {o.country}<br />
+        E-Mail: <a href={`mailto:${o.email}`}>{o.email}</a>
+      </p>
+
+      <h2>2. Allgemeines</h2>
+      <p class="muted">
+        Diese Website ist eine private, nicht-kommerzielle Fan-Seite zum Star-Stable-Online-Klub
+        „{site.name}". Personenbezogene Daten werden nur in dem Umfang verarbeitet, der für den
+        Betrieb und die Funktion dieser Seite zwingend notwendig ist. Rechtsgrundlage ist
+        – soweit nicht anders angegeben – Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am
+        sicheren und funktionalen Betrieb der Website).
+      </p>
+
+      <h2>3. Hosting</h2>
+      <p class="muted">
+        Diese Website wird auf <strong>{h.provider}</strong> ({h.address}) gehostet (GitHub Pages).
+        Beim Aufruf einer Seite werden vom Hoster automatisch Server-Logs angelegt. Diese enthalten
+        typischerweise: gekürzte/vollständige IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene
+        URL, übertragene Datenmenge, Referrer und User-Agent.
+      </p>
+      <p class="muted">
+        {h.logsRetention}
+      </p>
+      <p class="muted">
+        Da der Hoster in den USA sitzt, kann eine Datenübermittlung in ein Drittland erfolgen.
+        Die Übermittlung erfolgt auf Grundlage der EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).
+      </p>
+
+      <h2>4. Cookies</h2>
+      <p class="muted">
+        Diese Website setzt <strong>keine Cookies</strong> und verwendet keinerlei Tracking-Technologien,
+        die auf deinem Gerät gespeichert werden.
+      </p>
+
+      <h2>5. Webanalyse</h2>
+      <p class="muted">
+        Diese Website verwendet <strong>keine Webanalyse</strong>. Es findet kein Tracking statt
+        und es werden keine Besucherstatistiken erhoben.
+      </p>
+
+      <h2>6. Eingebettete Inhalte / externe Links</h2>
+      {legal.embeds.map((e) => (
+        <p class="muted">
+          <strong>{e.service}:</strong> {e.purpose}{' '}
+          (<a href={e.url} target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a>)
+        </p>
+      ))}
+
+      <h2>7. Schriftarten</h2>
+      <p class="muted">
+        Schriftarten werden lokal von dieser Website ausgeliefert. Es findet keine Verbindung
+        zu externen Schrift-CDNs (z.B. Google Fonts) statt.
+      </p>
+
+      <h2>8. Deine Rechte</h2>
+      <p class="muted">Dir stehen nach DSGVO insbesondere folgende Rechte zu:</p>
+      <ul class="muted">
+        <li>Auskunft (Art. 15 DSGVO)</li>
+        <li>Berichtigung (Art. 16 DSGVO)</li>
+        <li>Löschung (Art. 17 DSGVO)</li>
+        <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Widerspruch (Art. 21 DSGVO)</li>
+        <li>Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO)</li>
+      </ul>
+      <p class="muted">
+        Zur Ausübung deiner Rechte genügt eine formlose Mitteilung an die oben genannte E-Mail-Adresse.
+      </p>
+
+      <h2>9. Änderungen dieser Datenschutzerklärung</h2>
+      <p class="muted">
+        Diese Erklärung kann angepasst werden, wenn sich Gesetzeslage oder eingesetzte Dienste ändern.
+        Es gilt jeweils die aktuell veröffentlichte Fassung.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

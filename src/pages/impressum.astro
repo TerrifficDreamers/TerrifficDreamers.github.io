@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import legal from '../config/legal.json';
+const o = legal.owner;
+---
+<BaseLayout title="Impressum">
+  <header class="page-header">
+    <div class="container container--narrow">
+      <span class="eyebrow">Rechtliches</span>
+      <h1>Impressum</h1>
+      <p class="muted">Angaben gemäß § 5 TMG</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container container--narrow">
+      <h2>Diensteanbieter</h2>
+      <p>
+        {o.name}<br />
+        {o.street}<br />
+        {o.zip} {o.city}<br />
+        {o.country}
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        E-Mail: <a href={`mailto:${o.email}`}>{o.email}</a>
+        {o.phone && (<><br />Telefon: {o.phone}</>)}
+      </p>
+
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>{legal.responsible}</p>
+
+      <h2>Haftungsausschluss</h2>
+      <h3>Haftung für Inhalte</h3>
+      <p class="muted">
+        Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit
+        und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als Diensteanbieter bin ich
+        gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+        Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte
+        fremde Informationen zu überwachen.
+      </p>
+
+      <h3>Haftung für Links</h3>
+      <p class="muted">
+        Mein Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe.
+        Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten
+        Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
+      </p>
+
+      <h3>Urheberrecht</h3>
+      <p class="muted">
+        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
+        Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen
+        des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors. Die Terrific Dreamers sind
+        ein Klub im Spiel <em>Star Stable Online</em>; alle ingame-Bezeichnungen, Logos und Marken sind Eigentum
+        ihrer jeweiligen Inhaber.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

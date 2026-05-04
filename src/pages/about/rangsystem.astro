@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ranks from '../../config/ranks.json';
+---
+<BaseLayout title="Rangsystem" description="Acht Stufen vom Cavalier bis zur Crown.">
+  <header class="page-header">
+    <div class="container container--narrow">
+      <span class="eyebrow">About</span>
+      <h1>Rangsystem</h1>
+      <p class="muted">Acht Stufen, klare Aufgaben. Von unten nach oben.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container container--narrow">
+      <div style="display:grid; gap: var(--sp-4);">
+        {ranks.ranks.map((r) => (
+          <div class="rank" data-reveal>
+            <div class="rank__num">{r.order}</div>
+            <div>
+              <h3 class="rank__name">{r.name}</h3>
+              <div class="rank__ingame">Ingame: {r.ingame}</div>
+              <p class="rank__desc">{r.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

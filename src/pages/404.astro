@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="404 — Seite nicht gefunden" noindex={true}>
+  <section style="min-height: 60svh; display:flex; align-items:center; justify-content:center; text-align:center;">
+    <div class="container container--narrow">
+      <span class="eyebrow">Fehler 404</span>
+      <h1 style="font-size: clamp(3rem, 12vw, 6rem); margin-bottom: var(--sp-2);">Verirrt?</h1>
+      <p class="muted" style="font-size: 1.15rem;">
+        Diese Seite gibt es nicht (mehr). Vielleicht ist sie auf einem anderen Server unterwegs.
+      </p>
+      <div style="margin-top: var(--sp-8); display:flex; gap:var(--sp-3); justify-content:center; flex-wrap:wrap;">
+        <a class="btn btn--primary" href="/">Zur Startseite</a>
+        <a class="btn btn--ghost" href="/about">Übersicht ansehen</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

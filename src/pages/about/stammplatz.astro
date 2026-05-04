@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../config/site.json';
+---
+<BaseLayout title="Stammplatz">
+  <header class="page-header">
+    <div class="container container--narrow">
+      <span class="eyebrow">About</span>
+      <h1>Unser Stammplatz</h1>
+    </div>
+  </header>
+
+  <section>
+    <div class="container container--narrow">
+      <p data-reveal>
+        Wir treffen uns zu jedem Clubtreffen am <strong>Brunnen in Silverglade</strong> auf <strong>{site.server}</strong>.
+        Hier startet jedes Treffen — von hier reiten wir gemeinsam los.
+      </p>
+      <figure data-reveal style="margin: var(--sp-8) 0;">
+        <img
+          src="/media/misc/silverglade-brunnen.jpg"
+          alt="Brunnen in Silverglade"
+          style="width:100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius-card); border: 1px solid var(--color-border);"
+          onerror="this.style.display='none'"
+        />
+        <figcaption class="muted" style="margin-top: var(--sp-2); font-size: 0.85rem; text-align:center;">
+          Brunnen in Silverglade — unser Treffpunkt
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+</BaseLayout>

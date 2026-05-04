@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pages = [
+  { href: '/about/stammplatz', title: 'Stammplatz', desc: 'Wo wir uns ingame treffen.' },
+  { href: '/about/cluboutfit', title: 'Cluboutfit', desc: 'Unser einheitlicher Look.' },
+  { href: '/about/rangsystem', title: 'Rangsystem', desc: 'Acht Stufen, klare Aufgaben.' },
+  { href: '/about/wochenplan', title: 'Wochenplan', desc: 'Wann wir uns sehen.' }
+];
+---
+<BaseLayout title="About">
+  <header class="page-header">
+    <div class="container container--narrow">
+      <span class="eyebrow">Über uns</span>
+      <h1>About us</h1>
+      <p class="muted">Alles, was du über die Terrific Dreamers wissen solltest.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="grid">
+        {pages.map((p) => (
+          <a class="card card--link" href={p.href} data-reveal>
+            <h3 class="card__title">{p.title}</h3>
+            <p class="muted">{p.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

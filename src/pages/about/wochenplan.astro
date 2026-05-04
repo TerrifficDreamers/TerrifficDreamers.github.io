@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import schedule from '../../config/schedule.json';
+---
+<BaseLayout title="Wochenplan" description="Wann wir uns treffen.">
+  <header class="page-header">
+    <div class="container container--narrow">
+      <span class="eyebrow">About</span>
+      <h1>Wochenplan</h1>
+      <p class="muted">Unsere regelmäßigen Treffen.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container container--narrow">
+      <div style="display:grid; gap: var(--sp-4);">
+        {schedule.regular.map((s) => (
+          <div class="schedule-card" data-reveal>
+            <div>
+              <div class="schedule-card__day">{s.day}</div>
+              <div class="schedule-card__time">{s.time} Uhr</div>
+            </div>
+            <div>
+              <p style="margin: 0; font-weight: 500;">{s.note}</p>
+              <p class="schedule-card__loc">{s.location}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="muted" style="font-size: 0.85rem; margin-top: var(--sp-8); text-align:center;">
+        Termine werden per Discord angekündigt. Änderungen vorbehalten.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

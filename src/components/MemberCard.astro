@@ -1,0 +1,18 @@
+---
+const { member } = Astro.props;
+---
+<div class="member" data-reveal>
+  <img
+    class="member__avatar"
+    src={member.image || '/media/logo/club-logo.png'}
+    alt={member.name}
+    loading="lazy"
+    onerror="this.src='/media/logo/club-logo.png'; this.style.opacity='0.5';"
+  />
+  <h3 class="member__name">{member.name}</h3>
+  <div class="member__role">{member.role}</div>
+  <p class="member__rank">{member.rank}{member.since ? ` · seit ${member.since}` : ''}</p>
+  {member.discord && (
+    <p class="muted" style="font-size:0.85rem; margin-top:var(--sp-2);">@{member.discord}</p>
+  )}
+</div>

@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import outfit from '../../config/outfit.json';
+---
+<BaseLayout title="Cluboutfit" description="Unser einheitlicher Look — Schwarz, Weinrot, Messing.">
+  <header class="page-header">
+    <div class="container container--narrow">
+      <span class="eyebrow">About</span>
+      <h1>Cluboutfit</h1>
+      <p class="muted">Schwarz, Weinrot, Rot, Messing — unser Erkennungszeichen.</p>
+      <div style="display:flex; gap:var(--sp-2); justify-content:center; margin-top:var(--sp-4);">
+        {outfit.palette.map((c) => (
+          <span aria-label={c} title={c} style={`width:32px; height:32px; border-radius:50%; background:${c}; border:1px solid var(--color-border);`}></span>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      {outfit.categories.map((cat) => (
+        <div class="outfit-cat" data-reveal>
+          <h2 class="outfit-cat__title">{cat.name}</h2>
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            {cat.items.map((it) => (
+              <div class="outfit-item">
+                <img src={it.image} alt={it.name} loading="lazy" onerror="this.src='/media/logo/club-logo.png'; this.style.opacity='0.3';" />
+                <div>
+                  <h3 class="outfit-item__name">{it.name}</h3>
+                  {(it.priceJ != null || it.priceSC != null) && (
+                    <div>
+                      {it.priceJ != null && <span class="outfit-item__price">{it.priceJ.toLocaleString('de-DE')} J$</span>}
+                      {it.priceSC != null && <span class="outfit-item__price">{it.priceSC} SC</span>}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+      <p class="muted" style="text-align:center; font-size: 0.85rem;">
+        Preise variieren je nach Star-Stable-Update. Werte in <code>src/config/outfit.json</code> aktualisierbar.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

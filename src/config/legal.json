@@ -1,0 +1,24 @@
+{
+  "owner": {
+    "name": "__VORNAME NACHNAME__",
+    "street": "__STRASSE HAUSNR__",
+    "zip": "__PLZ__",
+    "city": "__ORT__",
+    "country": "Deutschland",
+    "email": "__kontakt@example.com__",
+    "phone": ""
+  },
+  "responsible": "Wie oben (V.i.S.d.P.)",
+  "hosting": {
+    "provider": "GitHub, Inc.",
+    "address": "88 Colin P Kelly Jr St, San Francisco, CA 94107, USA",
+    "logsRetention": "Server-Logs (IP, User-Agent, Zeitstempel) werden von GitHub für maximal 14 Tage zur Sicherstellung des Betriebs gespeichert."
+  },
+  "embeds": [
+    {
+      "service": "Google Forms",
+      "purpose": "Bewerbungsformular wird per Klick auf einen externen Link geöffnet (kein Embed).",
+      "url": "https://policies.google.com/privacy"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MemberCard from '../../components/MemberCard.astro';
+import members from '../../config/members.json';
+---
+<BaseLayout title="Clubmanagement">
+  <header class="page-header">
+    <div class="container container--narrow">
+      <span class="eyebrow">Management</span>
+      <h1>Clubmanagement</h1>
+      <p class="muted">Die Personen, die den Club im Hintergrund am Laufen halten.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      {members.clubmanagement.length === 0 ? (
+        <p class="muted" style="text-align:center;">Noch keine Einträge.</p>
+      ) : (
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+          {members.clubmanagement.map((m) => <MemberCard member={m} />)}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

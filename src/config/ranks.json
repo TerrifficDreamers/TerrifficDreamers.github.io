@@ -1,0 +1,52 @@
+{
+  "ranks": [
+    {
+      "order": 1,
+      "name": "Cavalier",
+      "ingame": "Anfänger",
+      "description": "Probezeit-Mitglieder. Lernen den Club kennen und werden vom Patenteam begleitet."
+    },
+    {
+      "order": 2,
+      "name": "Lord / Lady",
+      "ingame": "Mitglied",
+      "description": "Vollmitglied nach bestandener Probezeit. Berechtigt, an Prüfungen teilzunehmen."
+    },
+    {
+      "order": 3,
+      "name": "Maid",
+      "ingame": "Stallmädchen",
+      "description": "Langzeitig inaktive Mitglieder. Kein Aktivstatus."
+    },
+    {
+      "order": 4,
+      "name": "Count / Countess",
+      "ingame": "Mitglied",
+      "description": "Prüfung bestanden, Teil des Competition-Teams."
+    },
+    {
+      "order": 5,
+      "name": "Baron / Baroness",
+      "ingame": "Erfahrener Reiter",
+      "description": "Mindestens 15 Competition-XP gesammelt."
+    },
+    {
+      "order": 6,
+      "name": "Duke / Duchess",
+      "ingame": "Meister",
+      "description": "Hat mindestens eine Competition mitgestaltet."
+    },
+    {
+      "order": 7,
+      "name": "Gouvernant",
+      "ingame": "Reitlehrer",
+      "description": "Reitlehrer-Team. Übernimmt Trainings und Bewertungen."
+    },
+    {
+      "order": 8,
+      "name": "The Crown",
+      "ingame": "Clubleitung",
+      "description": "Höchster Rang. Clubleitung."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "regular": [
+    {
+      "day": "Montag",
+      "time": "19:00",
+      "location": "Stammplatz – Brunnen in Silverglade, Server 07",
+      "note": "Reguläres Clubtreffen"
+    },
+    {
+      "day": "Dienstag",
+      "time": "19:00",
+      "location": "Stammplatz – Brunnen in Silverglade, Server 07",
+      "note": "Reguläres Clubtreffen"
+    },
+    {
+      "day": "Freitag",
+      "time": "20:00",
+      "location": "nach Absprache",
+      "note": "Optionales Competition-Training"
+    }
+  ]
+}

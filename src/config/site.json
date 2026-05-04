@@ -1,0 +1,22 @@
+{
+  "name": "Terrific Dreamers",
+  "tagline": "The secret to success is Teamwork",
+  "founded": "2022-01-23",
+  "server": "Server 07 (Star Stable Online)",
+  "discordInvite": "https://discord.gg/__INVITE_CODE__",
+  "applicationFormUrl": "https://docs.google.com/forms/d/e/__YOUR_FORM_ID__/viewform",
+  "socials": {
+    "instagram": "",
+    "tiktok": ""
+  },
+  "creator": {
+    "name": "Jan Büchen",
+    "url": "https://www.youtube.com/@overload-gamedev"
+  },
+  "comingSoon": {
+    "enabled": true,
+    "title": "Coming Soon",
+    "message": "Unsere neue Seite ist im Aufbau. Wenn du das Passwort kennst, geht's hier weiter.",
+    "passwordHash": "ea66ed6d5bc6a34436b141a683b9d6767ac220d60455b1c0a572bc124facbf93"
+  }
+}
