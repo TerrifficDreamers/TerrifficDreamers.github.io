@@ -3,13 +3,13 @@
     {
       "day": "Montag",
       "time": "19:00",
-      "location": "Stammplatz – Brunnen in Silverglade, Server 07",
+      "location": "Stammplatz – Silverglade Landgut, Blackberry Galaxy",
       "note": "Reguläres Clubtreffen"
     },
     {
       "day": "Dienstag",
       "time": "19:00",
-      "location": "Stammplatz – Brunnen in Silverglade, Server 07",
+      "location": "Stammplatz – Silverglade Landgut, Blackberry Galaxy",
       "note": "Reguläres Clubtreffen"
     },
     {
@@ -18,5 +18,6 @@
       "location": "nach Absprache",
       "note": "Optionales Competition-Training"
     }
-  ]
+  ],
+  "communication": "Wochenplan wird per WhatsApp und Clubmaster (Discord) angekündigt. Änderungen vorbehalten."
 }

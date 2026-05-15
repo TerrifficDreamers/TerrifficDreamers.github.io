@@ -1,37 +1,44 @@
 {
-  "intro": "Herzlich willkommen auf der Homepage der Terrific Dreamers. Begleite uns auf eine kleine Reise durch unsere Vergangenheit.",
-  "quote": "Der Club erlaubte mir als Person zu wachsen und zu lernen. Heute kann ich mit Stolz sagen, dass die Schnapsidee „Terrific Dreamers\" der beste Zufall meines Lebens war.",
+  "intro": "Zwischen den Sternen von Jorvik, in Blackberry Galaxy, entstand am 11.05.2026 eine kleine Gruppe von Reitern mit einem gemeinsamen Traum: einen Ort zu erschaffen, an dem Zusammenhalt, Vertrauen und Leidenschaft wichtiger sind als Perfektion. Aus diesem Traum wurden die Terrific Dreamers geboren.",
+  "welcome": {
+    "heading": "Willkommen bei den Terrific Dreamers",
+    "paragraphs": [
+      "Zwischen den Sternen von Jorvik, in Blackberry Galaxy, entstand am 11.05.2026 eine kleine Gruppe von Reitern mit einem gemeinsamen Traum: einen Ort zu erschaffen, an dem Zusammenhalt, Vertrauen und Leidenschaft wichtiger sind als Perfektion. Aus diesem Traum wurden die Terrific Dreamers geboren.",
+      "Man erzählt sich, dass die Dreamers ihren Namen tragen, weil sie niemals aufgehört haben, an etwas Größeres zu glauben — an ein Team, das nicht nur gemeinsam reitet, sondern gemeinsam wächst. Jede Person, die Teil dieses Weges wird, bringt ihre eigene Geschichte, ihre eigenen Stärken und ihren eigenen Funken mit in den Club.",
+      "Unser Unterricht basiert auf SSD und PDM und bildet das Fundament unserer gemeinsamen Reise. Mit Disziplin, Harmonie und Kreativität arbeiten wir daran, uns stetig weiterzuentwickeln und als Einheit stärker zu werden. Dabei geht es nicht nur um perfekte Figuren oder schwere Choreografien, sondern darum, miteinander zu lernen und sich gegenseitig zu unterstützen.",
+      "Die Terrific Dreamers stehen für eine starke Gemeinschaft, in der jede Person ihren Platz finden kann. Gemeinsam möchten wir Erinnerungen schaffen, Herausforderungen meistern und langfristig an Competitions teilnehmen, um unsere Geschichte auch außerhalb des Clubs sichtbar zu machen.",
+      "Denn am Ende sind wir nicht einfach nur ein Dressurclub. Wir sind Dreamers — und jede große Geschichte beginnt mit einem Traum."
+    ]
+  },
+  "unterricht": {
+    "heading": "Unterrichtsgestaltung",
+    "paragraphs": [
+      "Wir legen großen Wert auf Teamgeist, Struktur und eine fundierte Ausbildung. Seit unserer Gründung am 11.05.2026 verfolgen wir das Ziel, eine starke und langfristige Gemeinschaft aufzubauen, in der sich jede Person weiterentwickeln und wohlfühlen kann.",
+      "Unser Unterricht basiert auf SSD und PDM und wird sorgfältig geplant, damit sowohl Anfänger als auch fortgeschrittene Reiter die Möglichkeit haben, sich in ihrem eigenen Tempo zu verbessern. Dabei achten wir auf eine gute Balance zwischen Anspruch und Spaß — das Training soll motivieren und fördern, ohne zu überfordern.",
+      "Wir möchten zeigen, dass Dressur nicht nur aus Perfektion besteht, sondern vor allem aus Harmonie, Verständnis und Teamarbeit. Deshalb ist bei uns niemand verpflichtet, jede Figur sofort auswendig zu kennen. Viel wichtiger ist die Bereitschaft, dazuzulernen, sich weiterzuentwickeln und gemeinsam mit dem Team zu wachsen. Reitqualität zeigt sich nicht nur in der Theorie, sondern vor allem im Gefühl für Rhythmus, Präzision und Zusammenarbeit.",
+      "Neue Mitglieder starten bei uns als Teil unserer Newcomer-Phase, in der sie den Club, unsere Unterrichtsweise und die Grundlagen kennenlernen können. Danach beginnt der strukturierte Unterricht, in dem wichtige Dressurabläufe, Figuren und Clubdynamiken vermittelt werden. Langfristig möchten wir gemeinsam stärker werden und die Terrific Dreamers auch auf Competitions vertreten.",
+      "Die Terrific Dreamers stehen für mehr als nur Unterricht — wir stehen für Freundschaften, gemeinsame Ziele und eine Community, die miteinander wächst."
+    ]
+  },
+  "quote": "Wir sind Dreamers — und jede große Geschichte beginnt mit einem Traum.",
   "events": [
     {
-      "date": "2021-12",
-      "title": "Die Idee entsteht",
-      "text": "Anfang Dezember 2021 wird die Idee zu den Terrific Dreamers geboren."
+      "date": "2026-05",
+      "title": "Die Geburtsstunde",
+      "text": "Am 11. Mai 2026 entsteht in Blackberry Galaxy aus einem gemeinsamen Traum heraus eine kleine Gruppe von Reiter:innen — die Terrific Dreamers."
     },
     {
-      "date": "2022-01-23",
-      "title": "Offizielle Eröffnung",
-      "text": "Am 23. Januar 2022 öffnet der Club offiziell seine Tore."
+      "date": "2026-05",
+      "title": "Die ersten Schritte",
+      "text": "Wir definieren unsere Werte: Zusammenhalt, Vertrauen und Leidenschaft vor Perfektion. Erste Strukturen entstehen, das Fundament wird gelegt."
     },
     {
-      "date": "2023",
+      "date": "2026",
       "title": "Wir wachsen",
-      "text": "Erste größere Competitions, neue Strukturen, das Rangsystem nimmt Form an."
-    },
-    {
-      "date": "2024",
-      "title": "Etabliert",
-      "text": "Stabile Mitgliederbasis, regelmäßige Treffen, eingespieltes Team."
-    },
-    {
-      "date": "2025",
-      "title": "Heute",
-      "text": "Klare Rituale, eigener Stil, großes Herz."
+      "text": "Unsere Newcomer-Phase und strukturierter Unterricht auf Basis von SSD und PDM nehmen Form an. Jede Person bringt ihre eigene Geschichte und ihren eigenen Funken mit."
     }
   ],
   "gallery": {
-    "2022": [],
-    "2023": [],
-    "2024": [],
-    "2025": []
+    "2026": []
   }
 }

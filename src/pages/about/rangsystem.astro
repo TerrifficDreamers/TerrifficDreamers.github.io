@@ -2,29 +2,220 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ranks from '../../config/ranks.json';
 ---
-<BaseLayout title="Rangsystem" description="Acht Stufen vom Cavalier bis zur Crown.">
+<BaseLayout title="Rangsystem" description="Sechs Stufen vom Rising Star bis zum Celestial Keeper.">
   <header class="page-header">
     <div class="container container--narrow">
       <span class="eyebrow">About</span>
       <h1 data-letters>Rangsystem</h1>
-      <p class="muted">Acht Stufen, klare Aufgaben. Von unten nach oben.</p>
+      <p class="muted">Sechs Stufen, klare Aufgaben — von oben nach unten.</p>
     </div>
   </header>
 
   <section>
     <div class="container container--narrow">
-      <div style="display:grid; gap: var(--sp-4);" data-reveal-stagger>
-        {ranks.ranks.map((r) => (
-          <div class="rank" data-reveal="fade-left">
-            <div class="rank__num">{r.order}</div>
-            <div>
-              <h3 class="rank__name">{r.name}</h3>
-              <div class="rank__ingame">Ingame: {r.ingame}</div>
-              <p class="rank__desc">{r.description}</p>
+      <ol class="ranks" data-reveal-stagger>
+        {ranks.ranks.map((r, i) => (
+          <li class="rank-card" data-reveal="fade-left" style={`--rank-color: ${r.color}; --rank-i: ${i};`}>
+            <div class="rank-card__glow" aria-hidden="true"></div>
+            <div class="rank-card__chip" aria-hidden="true">
+              <span class="rank-card__chip-ring"></span>
+              <span class="rank-card__chip-dot"></span>
             </div>
-          </div>
+            <div class="rank-card__body">
+              <div class="rank-card__top">
+                <h2 class="rank-card__name">
+                  <span class="rank-card__symbol" aria-hidden="true">{r.symbol}</span>
+                  <span>{r.name}</span>
+                </h2>
+                <span class="rank-card__order" aria-hidden="true">{String(r.order).padStart(2,'0')}</span>
+              </div>
+              <div class="rank-card__ingame">
+                <span class="rank-card__ingame-label">Ingame</span>
+                <span class="rank-card__ingame-divider" aria-hidden="true"></span>
+                <span class="rank-card__ingame-value">{r.ingame}</span>
+              </div>
+              <p class="rank-card__desc">{r.description}</p>
+            </div>
+          </li>
         ))}
-      </div>
+      </ol>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .ranks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--sp-4);
+  }
+
+  .rank-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: var(--sp-5);
+    align-items: center;
+    padding: var(--sp-5) var(--sp-6);
+    background:
+      linear-gradient(135deg,
+        color-mix(in srgb, var(--rank-color) 7%, var(--color-surface)) 0%,
+        var(--color-surface) 55%,
+        var(--color-surface-2) 100%);
+    border: 1px solid color-mix(in srgb, var(--rank-color) 22%, var(--color-border));
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    isolation: isolate;
+    transition:
+      transform 380ms var(--ease),
+      box-shadow 380ms var(--ease),
+      border-color 380ms var(--ease);
+  }
+  .rank-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 4px;
+    background: var(--rank-color);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--rank-color) 60%, transparent);
+    pointer-events: none;
+  }
+  .rank-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--rank-color) 65%, transparent);
+    box-shadow:
+      0 18px 38px rgba(0, 0, 0, 0.5),
+      0 0 0 1px color-mix(in srgb, var(--rank-color) 40%, transparent),
+      0 0 30px color-mix(in srgb, var(--rank-color) 18%, transparent);
+  }
+
+  .rank-card__glow {
+    position: absolute;
+    inset: -40% -10% auto auto;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, color-mix(in srgb, var(--rank-color) 28%, transparent) 0%, transparent 70%);
+    filter: blur(20px);
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* --- Chip --- */
+  .rank-card__chip {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    z-index: 1;
+  }
+  .rank-card__chip-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1.5px solid color-mix(in srgb, var(--rank-color) 55%, transparent);
+    background: color-mix(in srgb, var(--rank-color) 8%, transparent);
+  }
+  .rank-card__chip-ring::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--rank-color) 22%, transparent);
+  }
+  .rank-card__chip-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--rank-color);
+    box-shadow:
+      0 0 0 4px color-mix(in srgb, var(--rank-color) 18%, transparent),
+      0 0 14px color-mix(in srgb, var(--rank-color) 70%, transparent);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* --- Body --- */
+  .rank-card__body {
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .rank-card__top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-2);
+  }
+  .rank-card__name {
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--sp-2);
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2.2vw, 1.55rem);
+    font-weight: 500;
+    margin: 0;
+    color: color-mix(in srgb, var(--rank-color) 92%, white 8%);
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 22px color-mix(in srgb, var(--rank-color) 35%, transparent);
+  }
+  .rank-card__symbol {
+    font-size: 0.95em;
+    opacity: 0.9;
+  }
+  .rank-card__order {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: color-mix(in srgb, var(--rank-color) 55%, var(--color-muted));
+    opacity: 0.7;
+    letter-spacing: 0.06em;
+  }
+
+  .rank-card__ingame {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-3);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .rank-card__ingame-label {
+    color: var(--color-brass);
+    font-weight: 600;
+  }
+  .rank-card__ingame-divider {
+    width: 18px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-brass), transparent);
+  }
+  .rank-card__ingame-value {
+    color: var(--color-text);
+    opacity: 0.85;
+  }
+
+  .rank-card__desc {
+    color: var(--color-muted);
+    margin: 0;
+    font-size: 0.97rem;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 540px) {
+    .rank-card {
+      grid-template-columns: 1fr;
+      gap: var(--sp-3);
+      padding: var(--sp-5);
+      text-align: center;
+    }
+    .rank-card__chip { margin: 0 auto; }
+    .rank-card__top { justify-content: center; }
+    .rank-card__ingame { justify-content: center; }
+    .rank-card__name { justify-content: center; }
+  }
+</style>

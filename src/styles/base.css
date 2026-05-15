@@ -72,6 +72,18 @@ section {
 
 .muted { color: var(--color-muted); }
 
+.text-center { text-align: center; }
+.text-center .timeline { text-align: left; }
+.text-center .req-list,
+.text-center .ablauf-list,
+.text-center .schedule-list { text-align: left; }
+.text-center > p,
+.text-center > h1,
+.text-center > h2,
+.text-center > h3,
+.text-center > .eyebrow,
+.text-center > blockquote { margin-left: auto; margin-right: auto; }
+
 .skip-link {
   position: absolute;
   top: -100px; left: 0;

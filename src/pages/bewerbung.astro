@@ -3,17 +3,51 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../config/site.json';
 
 const requirements = [
-  'Mindestalter 16 Jahre',
-  'Spiellevel mindestens 20',
-  'Discord und WhatsApp aktiv nutzen',
-  'Regelmäßige Teilnahme an beiden Treffen pro Woche'
+  'Mindestens 16 Jahre alt',
+  'Mindestens Level 20',
+  'Bereit sein, auf Blackberry Galaxy zu wechseln',
+  'Clubpferde und -outfit besitzen und die Pferde auf mind. Level 13 gelevelt',
+  'Discord besitzen',
+  'In der Regel Montags, Dienstags und Freitags kommen können',
+  'Bereit sein, unserer WhatsApp Gruppe beizutreten'
 ];
-const steps = [
-  { n: 1, title: 'Bewerbung absenden', text: 'Du füllst das Formular aus und schickst es ab.' },
-  { n: 2, title: 'Bewertung', text: 'Sonntags um 15:00 Uhr werden alle eingegangenen Bewerbungen gemeinsam besprochen.' },
-  { n: 3, title: 'Benachrichtigung', text: 'Bei Annahme bekommst du eine Rückmeldung mit den nächsten Schritten.' },
-  { n: 4, title: 'Bewerbungsserver', text: 'Einladung auf den internen Discord-Bewerbungsserver.' },
-  { n: 5, title: 'Kennenlern-Treffen', text: 'Treffen mit deinem Patenteam und der Clubleitung im Spiel.' }
+
+const ablauf = [
+  {
+    n: 1,
+    title: 'Bewerbung absenden',
+    text: 'Du füllst das Bewerbungsformular aus und schickst es ab.'
+  },
+  {
+    n: 2,
+    title: 'Bewertung am Sonntag',
+    text: 'Die Bewerbungen werden jeden Sonntag zwischen 15:00 & 20:00 Uhr gelesen und nach Plätzen sortiert.'
+  },
+  {
+    n: 3,
+    title: 'Wartezeit & Plätze',
+    text: 'Sobald ein Schwung die Probezeit von 2 Wochen beendet hat, darf ein neuer Schwung von maximal 10 Personen joinen. Wer sich kurz nach Beginn einer Probezeit bewirbt, steht 7–14 Tage auf der (nicht öffentlichen) Warteliste.'
+  },
+  {
+    n: 4,
+    title: 'Story & Benachrichtigung',
+    text: 'Wir posten jedes Mal eine Story, wann genau wir die Bewerbungen gelesen und die angenommenen Personen angeschrieben haben. Wer keine DM auf Instagram oder eine FA auf Discord bekommen hat, wurde entweder nicht angenommen oder steht auf der Nachrückerliste.'
+  },
+  {
+    n: 5,
+    title: 'Nachrücker',
+    text: 'Nachrücker sind Personen, bei denen kleinere Dinge (Alter, Level oder CO/CO) noch nicht ganz passen. Sie werden angeschrieben, sobald jemand seine 24-Stunden-Antwortfrist verstreichen lässt.'
+  },
+  {
+    n: 6,
+    title: 'Ausnahmen',
+    text: 'Prinzipiell machen wir weder beim Level noch beim Alter eine Ausnahme — außer du wirst in maximal 2 Monaten 16, oder du bist ca. 100 XP vor Level 20 und musst auf Quests warten.'
+  },
+  {
+    n: 7,
+    title: 'Annahme & Server-Invite',
+    text: 'Wenn du angenommen wurdest, bekommst du Sonntags gegen 21:00 eine Nachricht von uns. Du hast ab dann 24 h Zeit zu reagieren und dem Server zu joinen. Sonst läuft der Einladungslink ab und du musst dich erneut bewerben.'
+  }
 ];
 ---
 <BaseLayout title="Bewerbung" description="So wirst du Teil der Terrific Dreamers.">
@@ -26,12 +60,14 @@ const steps = [
   </header>
 
   <section>
-    <div class="container container--narrow">
-      <h2 data-reveal>Voraussetzungen</h2>
-      <ul style="list-style:none; padding:0;" data-reveal-stagger>
+    <div class="container container--narrow text-center">
+      <h2 data-reveal>Anforderungen</h2>
+      <p class="muted" data-reveal>Um TD beizutreten, musst du folgende Anforderungen erfüllen:</p>
+      <ul class="req-list" data-reveal-stagger>
         {requirements.map((r) => (
-          <li class="card" style="padding: var(--sp-3) var(--sp-5); margin-bottom: var(--sp-3);" data-reveal="fade-left">
-            <span style="color: var(--color-brass); margin-right: var(--sp-3);">✓</span>{r}
+          <li class="card req-item" data-reveal="fade-left">
+            <span class="req-check" aria-hidden="true">✓</span>
+            <span>{r}</span>
           </li>
         ))}
       </ul>
@@ -39,15 +75,15 @@ const steps = [
   </section>
 
   <section style="background: var(--color-surface);">
-    <div class="container container--narrow">
+    <div class="container container--narrow text-center">
       <h2 data-reveal>Ablauf</h2>
-      <ol style="list-style:none; padding:0; counter-reset: step;" data-reveal-stagger>
-        {steps.map((s) => (
-          <li class="card" style="margin-bottom: var(--sp-4); display:grid; grid-template-columns:48px 1fr; gap:var(--sp-4); align-items:start;" data-reveal="fade-up">
+      <ol class="ablauf-list" data-reveal-stagger>
+        {ablauf.map((s) => (
+          <li class="card ablauf-item" data-reveal="fade-up">
             <div class="rank__num" aria-hidden="true">{s.n}</div>
-            <div>
-              <h3 style="margin: 0 0 var(--sp-1); font-size: 1.2rem;">{s.title}</h3>
-              <p class="muted" style="margin:0;">{s.text}</p>
+            <div class="ablauf-item__body">
+              <h3 class="ablauf-item__title">{s.title}</h3>
+              <p class="muted ablauf-item__text">{s.text}</p>
             </div>
           </li>
         ))}
@@ -56,7 +92,7 @@ const steps = [
   </section>
 
   <section>
-    <div class="container container--narrow" style="text-align:center;">
+    <div class="container container--narrow text-center">
       <h2 data-reveal>Bereit?</h2>
       <p class="muted" data-reveal>Das Bewerbungsformular läuft über Google Forms.</p>
       <p data-reveal>
@@ -67,3 +103,87 @@ const steps = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .req-list, .ablauf-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--sp-8) auto 0;
+    max-width: 640px;
+    text-align: left;
+  }
+
+  /* Anforderungen — generously padded check items */
+  .req-item {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-5);
+    padding: var(--sp-5) var(--sp-6);
+    margin-bottom: var(--sp-3);
+  }
+  .req-check {
+    flex: 0 0 auto;
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--color-brass) 14%, transparent);
+    color: var(--color-brass);
+    border: 1px solid color-mix(in srgb, var(--color-brass) 40%, transparent);
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1;
+  }
+
+  /* Ablauf — numbered circular badges */
+  .ablauf-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: var(--sp-5);
+    align-items: center;
+    padding: var(--sp-5) var(--sp-6);
+    margin-bottom: var(--sp-4);
+  }
+  .ablauf-item .rank__num {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-text);
+    background: linear-gradient(135deg, var(--color-wine), var(--color-wine-bright));
+    border: 2px solid var(--color-brass);
+    border-radius: 50%;
+    text-align: center;
+    padding: 0;
+    /* Optical adjustment so the digit sits visually centered */
+    padding-top: 2px;
+  }
+  .ablauf-item__title {
+    margin: 0 0 var(--sp-1);
+    font-size: 1.2rem;
+  }
+  .ablauf-item__text {
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    .req-item {
+      flex-direction: column;
+      gap: var(--sp-3);
+      text-align: center;
+      padding: var(--sp-5);
+    }
+    .ablauf-item {
+      grid-template-columns: 1fr;
+      gap: var(--sp-3);
+      text-align: center;
+    }
+    .ablauf-item .rank__num { margin: 0 auto; }
+  }
+</style>

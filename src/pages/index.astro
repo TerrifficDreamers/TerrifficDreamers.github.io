@@ -29,10 +29,12 @@ import story from '../config/story.json';
   </section>
 
   <section>
-    <div class="container container--narrow" style="text-align:center;">
+    <div class="container container--narrow text-center">
       <span class="eyebrow" data-reveal="fade-up">Willkommen</span>
-      <h2 data-reveal="fade-up">{`Schön, dass du hier bist`}</h2>
-      <p class="muted" data-reveal="fade-up">{story.intro}</p>
+      <h2 data-reveal="fade-up">{story.welcome.heading}</h2>
+      {story.welcome.paragraphs.map((p) => (
+        <p class="muted" data-reveal="fade-up">{p}</p>
+      ))}
     </div>
   </section>
 
@@ -41,11 +43,11 @@ import story from '../config/story.json';
       <div class="grid" data-reveal-stagger>
         <a href="/our-story" class="card card--link" data-reveal="fade-up">
           <h3 class="card__title">Our Story</h3>
-          <p class="muted">Wie aus einer Schnapsidee ein Club wurde.</p>
+          <p class="muted">Wie aus einem Traum ein Club wurde.</p>
         </a>
         <a href="/about/rangsystem" class="card card--link" data-reveal="fade-up">
           <h3 class="card__title">Rangsystem</h3>
-          <p class="muted">Acht Stufen, vom Cavalier bis zur Crown.</p>
+          <p class="muted">Sechs Stufen — vom Rising Star bis zum Celestial Keeper.</p>
         </a>
         <a href="/about/wochenplan" class="card card--link" data-reveal="fade-up">
           <h3 class="card__title">Wochenplan</h3>

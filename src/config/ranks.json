@@ -2,51 +2,51 @@
   "ranks": [
     {
       "order": 1,
-      "name": "Cavalier",
-      "ingame": "Anfänger",
-      "description": "Probezeit-Mitglieder. Lernen den Club kennen und werden vom Patenteam begleitet."
+      "name": "Celestial Keeper",
+      "symbol": "🜲",
+      "color": "#ffe476",
+      "ingame": "Clubleiter",
+      "description": "Du bist Teil der Clubführung und übernimmst im Spiel die Rolle des „Clubleiters\"."
     },
     {
       "order": 2,
-      "name": "Lord / Lady",
-      "ingame": "Mitglied",
-      "description": "Vollmitglied nach bestandener Probezeit. Berechtigt, an Prüfungen teilzunehmen."
+      "name": "Celestial Guide",
+      "symbol": "♞",
+      "color": "#c27c0e",
+      "ingame": "Reitlehrer",
+      "description": "Du hast mindestens eine RR-Routine geschrieben und übernimmst im Spiel die Rolle des „Reitlehrers\", wobei du dein Wissen an andere weitergibst."
     },
     {
       "order": 3,
-      "name": "Maid",
-      "ingame": "Stallmädchen",
-      "description": "Langzeitig inaktive Mitglieder. Kein Aktivstatus."
+      "name": "Luminary Rider",
+      "symbol": "✦",
+      "color": "#C68F70",
+      "ingame": "Schüler",
+      "description": "Du hast die Comp-Team-Prüfung erfolgreich bestanden und bist nun Teil des Teams. Im Spiel trägst du den Rang „Schüler\". Je zuverlässiger du an Competitions teilnimmst und dich einbringst, desto weiter steigst du im Rang auf."
     },
     {
       "order": 4,
-      "name": "Count / Countess",
+      "name": "Starlight Rider",
+      "symbol": "✧",
+      "color": "#ffffff",
       "ingame": "Mitglied",
-      "description": "Prüfung bestanden, Teil des Competition-Teams."
+      "description": "Du hast deine Probezeit erfolgreich abgeschlossen und bist nun ein fester Bestandteil der Terrific Dreamers."
     },
     {
       "order": 5,
-      "name": "Baron / Baroness",
-      "ingame": "Erfahrener Reiter",
-      "description": "Mindestens 15 Competition-XP gesammelt."
+      "name": "Fading Star",
+      "symbol": "♡︎",
+      "color": "#7C4930",
+      "ingame": "Stallmädchen",
+      "description": "Du bist derzeit längere Zeit inaktiv. Im Spiel bekommst du die Rolle des „Stallmädchens\"."
     },
     {
       "order": 6,
-      "name": "Duke / Duchess",
-      "ingame": "Meister",
-      "description": "Hat mindestens eine Competition mitgestaltet."
-    },
-    {
-      "order": 7,
-      "name": "Gouvernant",
-      "ingame": "Reitlehrer",
-      "description": "Reitlehrer-Team. Übernimmt Trainings und Bewertungen."
-    },
-    {
-      "order": 8,
-      "name": "The Crown",
-      "ingame": "Clubleitung",
-      "description": "Höchster Rang. Clubleitung."
+      "name": "Rising Star",
+      "symbol": "♥︎",
+      "color": "#88583D",
+      "ingame": "Neumitglied",
+      "description": "Du bist dem Club vor Kurzem beigetreten und befindest dich derzeit in der Probephase."
     }
   ]
 }

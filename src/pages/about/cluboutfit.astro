@@ -1,47 +1,105 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import outfit from '../../config/outfit.json';
+
+const sections = [
+  {
+    eyebrow: 'Reiter',
+    title: 'Dresscode',
+    image: '/media/outfit/dresscode.png',
+    alt: 'Cluboutfit für Reiter — Hut, Blazer, Dressurhose, Handschuhe, Stiefel'
+  },
+  {
+    eyebrow: 'Pferd',
+    title: 'Pferde-Outfit',
+    image: '/media/outfit/pferd-outfit.png',
+    alt: 'Outfit für das Clubpferd — Reithalfter, Dressursattel, Satteldecke, Schleifen, Wickelgamaschen'
+  },
+  {
+    eyebrow: 'Pferde',
+    title: 'Unsere Clubpferde',
+    image: '/media/outfit/clubpferde.png',
+    alt: 'Die beiden Clubpferde der Terrific Dreamers'
+  }
+];
 ---
-<BaseLayout title="Cluboutfit" description="Unser einheitlicher Look — Schwarz, Weinrot, Messing.">
+<BaseLayout title="Cluboutfit" description="Unser einheitlicher Look — Reiter, Pferd und Clubpferde.">
   <header class="page-header">
     <div class="container container--narrow">
       <span class="eyebrow">About</span>
       <h1 data-letters>Cluboutfit</h1>
-      <p class="muted">Schwarz, Weinrot, Rot, Messing — unser Erkennungszeichen.</p>
-      <div style="display:flex; gap:var(--sp-2); justify-content:center; margin-top:var(--sp-4);">
+      <p class="muted">Unser einheitlicher Look — für Reiter und Pferd.</p>
+      <div class="palette" aria-hidden="true">
         {outfit.palette.map((c) => (
-          <span aria-label={c} title={c} style={`width:32px; height:32px; border-radius:50%; background:${c}; border:1px solid var(--color-border);`}></span>
+          <span aria-label={c} title={c} style={`background:${c};`} class="palette__dot"></span>
         ))}
       </div>
     </div>
   </header>
 
   <section>
-    <div class="container">
-      {outfit.categories.map((cat) => (
-        <div class="outfit-cat" data-reveal>
-          <h2 class="outfit-cat__title">{cat.name}</h2>
-          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-            {cat.items.map((it) => (
-              <div class="outfit-item">
-                <img src={it.image} alt={it.name} loading="lazy" onerror="this.src='/media/logo/club-logo.png'; this.style.opacity='0.3';" />
-                <div>
-                  <h3 class="outfit-item__name">{it.name}</h3>
-                  {(it.priceJ != null || it.priceSC != null) && (
-                    <div>
-                      {it.priceJ != null && <span class="outfit-item__price">{it.priceJ.toLocaleString('de-DE')} J$</span>}
-                      {it.priceSC != null && <span class="outfit-item__price">{it.priceSC} SC</span>}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+    <div class="container container--narrow">
+      {sections.map((s, i) => (
+        <article class="outfit-block" data-reveal="fade-up">
+          <header class="outfit-block__header">
+            <span class="eyebrow">{s.eyebrow}</span>
+            <h2 class="outfit-block__title">{s.title}</h2>
+          </header>
+          <figure class="outfit-block__figure">
+            <img
+              src={s.image}
+              alt={s.alt}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              onerror="this.style.opacity='0.25'; this.parentElement.querySelector('.outfit-block__missing').hidden = false;"
+            />
+            <figcaption class="outfit-block__missing muted" hidden>
+              Bild fehlt noch — bitte ablegen unter <code>{s.image}</code>.
+            </figcaption>
+          </figure>
+        </article>
       ))}
-      <p class="muted" style="text-align:center; font-size: 0.85rem;">
-        Preise variieren je nach Star-Stable-Update. Werte in <code>src/config/outfit.json</code> aktualisierbar.
-      </p>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .palette {
+    display: flex;
+    gap: var(--sp-2);
+    justify-content: center;
+    margin-top: var(--sp-4);
+  }
+  .palette__dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+  }
+
+  .outfit-block {
+    margin-bottom: var(--sp-16);
+    text-align: center;
+  }
+  .outfit-block:last-child { margin-bottom: 0; }
+  .outfit-block__header { margin-bottom: var(--sp-6); }
+  .outfit-block__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+    margin: 0;
+  }
+  .outfit-block__figure {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .outfit-block__figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    background: transparent;
+  }
+  .outfit-block__missing {
+    margin-top: var(--sp-3);
+    font-size: 0.85rem;
+  }
+</style>

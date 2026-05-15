@@ -11,22 +11,45 @@ import site from '../../config/site.json';
   </header>
 
   <section>
-    <div class="container container--narrow">
+    <div class="container container--narrow text-center">
       <p data-reveal>
-        Wir treffen uns zu jedem Clubtreffen am <strong>Brunnen in Silverglade</strong> auf <strong>{site.server}</strong>.
+        Wir treffen uns zu jedem Clubtreffen am <strong>Silverglade Landgut</strong> auf <strong>{site.server}</strong>.
         Hier startet jedes Treffen — von hier reiten wir gemeinsam los.
       </p>
-      <figure data-reveal style="margin: var(--sp-8) 0;">
+
+      <figure class="plain-figure" data-reveal>
         <img
-          src="/media/misc/silverglade-brunnen.jpg"
-          alt="Brunnen in Silverglade"
-          style="width:100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius-card); border: 1px solid var(--color-border);"
-          onerror="this.style.display='none'"
+          src="/media/misc/stammplatz.png"
+          alt="Silverglade Landgut — unser Stammplatz"
+          loading="eager"
+          onerror="this.style.opacity='0.25'; this.parentElement.querySelector('.plain-figure__missing').hidden = false;"
         />
-        <figcaption class="muted" style="margin-top: var(--sp-2); font-size: 0.85rem; text-align:center;">
-          Brunnen in Silverglade — unser Treffpunkt
+        <figcaption class="plain-figure__caption muted">
+          Silverglade Landgut — unser Treffpunkt
+        </figcaption>
+        <figcaption class="plain-figure__missing muted" hidden>
+          Bild fehlt noch — bitte ablegen unter <code>/media/misc/stammplatz.png</code>.
         </figcaption>
       </figure>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .plain-figure {
+    margin: var(--sp-8) auto 0;
+    max-width: 520px;
+  }
+  .plain-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    background: transparent;
+  }
+  .plain-figure__caption {
+    margin-top: var(--sp-3);
+    font-size: 0.9rem;
+  }
+  .plain-figure__missing { margin-top: var(--sp-3); font-size: 0.85rem; }
+</style>

@@ -19,7 +19,18 @@ const fmtDate = (d) => {
   </header>
 
   <section>
+    <div class="container container--narrow text-center">
+      <span class="eyebrow" data-reveal>Unterricht</span>
+      <h2 data-reveal>{story.unterricht.heading}</h2>
+      {story.unterricht.paragraphs.map((p) => (
+        <p class="muted" data-reveal="fade-up">{p}</p>
+      ))}
+    </div>
+  </section>
+
+  <section style="background: var(--color-surface);">
     <div class="container container--narrow">
+      <h2 data-reveal class="text-center">Zeitlinie</h2>
       <ol class="timeline" data-reveal-stagger>
         {story.events.map((e) => (
           <li class="timeline__item" data-reveal="fade-left">
@@ -30,7 +41,7 @@ const fmtDate = (d) => {
         ))}
       </ol>
 
-      <blockquote class="quote" data-reveal>{story.quote}</blockquote>
+      <blockquote class="quote text-center" data-reveal>{story.quote}</blockquote>
     </div>
   </section>
 </BaseLayout>
