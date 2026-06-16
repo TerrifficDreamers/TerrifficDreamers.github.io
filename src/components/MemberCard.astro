@@ -10,8 +10,12 @@ const { member } = Astro.props;
     onerror="this.src='/media/logo/club-logo.png'; this.style.opacity='0.5';"
   />
   <h3 class="member__name">{member.name}</h3>
+  {member.age && <p class="member__age">{member.age} Jahre</p>}
   <div class="member__role">{member.role}</div>
   <p class="member__rank">{member.rank}{member.since ? ` · seit ${member.since}` : ''}</p>
+  {member.quote && (
+    <p class="member__quote">„{member.quote}“</p>
+  )}
   {member.discord && (
     <p class="muted" style="font-size:0.85rem; margin-top:var(--sp-2);">@{member.discord}</p>
   )}

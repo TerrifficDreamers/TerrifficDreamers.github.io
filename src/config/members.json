@@ -1,22 +1,58 @@
 {
   "clubmanagement": [
     {
+      "name": "Dorothy Dreamlake",
+      "age": 19,
+      "role": "Clubleitung / Patenteam",
+      "rank": "Patenteam",
+      "since": "",
+      "image": "/media/members/placeholder.png",
+      "discord": "",
+      "quote": "Am meisten gefällt mir die Offenheit untereinander, es gibt keine Ausgrenzung und jeder hält fest zusammen."
+    },
+    {
       "name": "Michelle Purplefrog",
-      "role": "Gründerin & Clubleitung",
-      "rank": "The Crown",
+      "age": 20,
+      "role": "Clubleitung / Reitlehrer",
+      "rank": "SSD Instructor / Media Manager",
       "since": "2026-05",
       "image": "/media/members/placeholder.png",
-      "discord": ""
+      "discord": "",
+      "quote": "Am meisten gefällt mir an den Terrific Dreamers, dass jeder zusammenhält, der Teamgeist und dass jeder zu jeder Zeit das Ziel im Auge behält."
+    },
+    {
+      "name": "Kristine Darkhome",
+      "age": 26,
+      "role": "Clubleitung / Patenteam",
+      "rank": "Patenteam",
+      "since": "",
+      "image": "/media/members/placeholder.png",
+      "discord": "",
+      "quote": "Am meisten gefallen mir die stetig neuen Herausforderungen bei der Dressur, die Offenheit untereinander, sowie der Zusammenhalt im Club."
+    }
+  ],
+  "patenteam": [
+    {
+      "name": "Luca Skylar Diamondwalker",
+      "age": 23,
+      "role": "Patenteam",
+      "rank": "Patenteam",
+      "since": "",
+      "image": "/media/members/placeholder.png",
+      "discord": "",
+      "quote": "Ich liebe einfach die Menschen und das Club-Klima finde ich super angenehm, zudem finde ich die Treffen auch echt entspannt."
     }
   ],
   "reitlehrer": [
     {
-      "name": "__NAME__",
-      "role": "Reitlehrer",
+      "name": "Amelia Duskglass",
+      "age": 21,
+      "role": "Reitlehrer / Discord Admin",
       "rank": "Gouvernant",
-      "since": "____-__",
+      "since": "",
       "image": "/media/members/placeholder.png",
-      "discord": ""
+      "discord": "",
+      "quote": "Am meisten gefällt mir die Stimmung, die im Club herrscht, der Fakt, dass man mit allen immer offen reden kann, wenn man mal Probleme oder ähnliches hat und dass es auch mal okay ist, wenn man aus privaten Gründen längerfristig ausfällt, ohne Druck zu bekommen, trotzdem zu erscheinen."
     }
   ]
 }
