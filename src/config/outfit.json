@@ -1,5 +1,9 @@
 {
-  "palette": ["#0E0B0C", "#7B1F2B", "#B08D57", "#EDE6DC"],
+  "palette": [
+    { "name": "Braun", "color": "var(--color-brown)" },
+    { "name": "Weiß", "color": "var(--color-text)" },
+    { "name": "Silber", "color": "var(--color-silver)" }
+  ],
   "categories": [
     {
       "name": "Kopf",

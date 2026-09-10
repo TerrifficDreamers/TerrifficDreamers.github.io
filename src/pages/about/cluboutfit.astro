@@ -29,9 +29,9 @@ const sections = [
       <span class="eyebrow">About</span>
       <h1 data-letters>Cluboutfit</h1>
       <p class="muted">Unser einheitlicher Look — für Reiter und Pferd.</p>
-      <div class="palette" aria-hidden="true">
+      <div class="palette" role="group" aria-label="Clubfarben">
         {outfit.palette.map((c) => (
-          <span aria-label={c} title={c} style={`background:${c};`} class="palette__dot"></span>
+          <span role="img" aria-label={c.name} title={c.name} style={`background:${c.color};`} class="palette__dot"></span>
         ))}
       </div>
     </div>
