@@ -8,6 +8,7 @@ function init() {
     burger.addEventListener('click', () => {
       const open = menu.classList.toggle('is-open');
       burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
       document.body.classList.toggle('menu-open', open);
     });
   }
@@ -30,6 +31,7 @@ function init() {
         document.querySelector('[data-nav-menu]')?.classList.remove('is-open');
         document.body.classList.remove('menu-open');
         document.querySelector('[data-nav-burger]')?.setAttribute('aria-expanded', 'false');
+        document.querySelector('[data-nav-burger]')?.setAttribute('aria-label', 'Menü öffnen');
       }
     });
   }

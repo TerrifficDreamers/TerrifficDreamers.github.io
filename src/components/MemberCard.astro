@@ -1,13 +1,14 @@
 ---
 const { member } = Astro.props;
+const hasPhoto = member.image && member.image !== '/media/members/placeholder.png';
 ---
 <div class="member" data-reveal="scale-in">
   <img
     class="member__avatar"
-    src={member.image || '/media/logo/club-logo.png'}
-    alt={member.name}
+    src={hasPhoto ? member.image : '/media/logo/club-logo.svg'}
+    alt={hasPhoto ? member.name : 'Clublogo als Platzhalter'}
     loading="lazy"
-    onerror="this.src='/media/logo/club-logo.png'; this.style.opacity='0.5';"
+    onerror="this.onerror=null; this.src='/media/logo/club-logo.svg';"
   />
   <h3 class="member__name">{member.name}</h3>
   {member.age && <p class="member__age">{member.age} Jahre</p>}

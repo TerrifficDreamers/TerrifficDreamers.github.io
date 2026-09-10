@@ -10,14 +10,14 @@ import story from '../config/story.json';
       <video
         class="hero__video"
         autoplay muted loop playsinline preload="metadata"
-        poster="/media/hero/poster.jpg"
+        poster="/media/hero/videostar-poster.jpg"
         aria-hidden="true">
-        <source src="/media/hero/background.mp4" type="video/mp4" />
+        <source src="/media/hero/videostar.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
-      <img class="hero__logo" src="/media/logo/club-logo.png" alt={`Logo ${site.name}`} width="200" height="200" />
+      <img class="hero__logo" src="/media/logo/club-logo.svg" alt={`Logo ${site.name}`} width="200" height="200" />
       <h1 class="hero__title" data-letters>{site.name}</h1>
       <p class="hero__tagline">„{site.tagline}"</p>
       <div class="hero__actions">
@@ -69,7 +69,7 @@ import story from '../config/story.json';
     .hero__bg::before {
       content: "";
       position: absolute; inset: 0;
-      background: url('/media/hero/poster.jpg') center/cover no-repeat;
+      background: url('/media/hero/videostar-poster.jpg') center/cover no-repeat;
       animation: kenburns 22s ease-in-out infinite alternate;
     }
     @media (prefers-reduced-motion: reduce) {
